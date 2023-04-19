@@ -1,0 +1,36 @@
+electricShocksInDsaClass.cpp: In function ‘bool cmp(heap, heap)’:
+electricShocksInDsaClass.cpp:15:62: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+   15 | bool cmp(const heap a, const heap b){return a.v<b.v||a.v==b.v&&a.id<b.id;}
+      |                                                      ~~~~~~~~^~~~~~~~~~~
+electricShocksInDsaClass.cpp: In function ‘void ins(Heap*, heap)’:
+electricShocksInDsaClass.cpp:11:23: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
+   11 | #define parent(a) ((a)-1>>1)
+      |                    ~~~^~
+electricShocksInDsaClass.cpp:29:33: note: in expansion of macro ‘parent’
+   29 |         for(int i=a->sz++; i; i=parent(i))
+      |                                 ^~~~~~
+electricShocksInDsaClass.cpp:11:23: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
+   11 | #define parent(a) ((a)-1>>1)
+      |                    ~~~^~
+electricShocksInDsaClass.cpp:30:32: note: in expansion of macro ‘parent’
+   30 |                 if(cmp(c[i], c[parent(i)]))swaph(c+i, c+parent(i));
+      |                                ^~~~~~
+electricShocksInDsaClass.cpp:11:23: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
+   11 | #define parent(a) ((a)-1>>1)
+      |                    ~~~^~
+electricShocksInDsaClass.cpp:30:57: note: in expansion of macro ‘parent’
+   30 |                 if(cmp(c[i], c[parent(i)]))swaph(c+i, c+parent(i));
+      |                                                         ^~~~~~
+electricShocksInDsaClass.cpp: In function ‘int main()’:
+electricShocksInDsaClass.cpp:80:14: warning: ignoring return value of ‘int scanf(const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   80 |         scanf("%lld%lld", &n, &m);
+      |         ~~~~~^~~~~~~~~~~~~~~~~~~~
+electricShocksInDsaClass.cpp:83:23: warning: ignoring return value of ‘int scanf(const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   83 |         rep(i, n)scanf("%lld", &hp), ins(&a[i].hp, toHeap(hp, i));
+      |                  ~~~~~^~~~~~~~~~~~~
+electricShocksInDsaClass.cpp:84:23: warning: ignoring return value of ‘int scanf(const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   84 |         rep(i, n)scanf("%lld", &a[i].atk0), a[i].atk=a[i].atk0;
+      |                  ~~~~~^~~~~~~~~~~~~~~~~~~~
+electricShocksInDsaClass.cpp:85:24: warning: ignoring return value of ‘int scanf(const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   85 |         while(m--)scanf("%lld%lld", &x, &y), Union(--x, --y);
+      |                   ~~~~~^~~~~~~~~~~~~~~~~~~~

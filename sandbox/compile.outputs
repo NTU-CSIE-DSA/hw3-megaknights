@@ -1,4 +1,0 @@
-electricShocksInDsaClass.cpp: In function ‘void Union(long long int, long long int)’:
-electricShocksInDsaClass.cpp:17:19: warning: unused variable ‘td’ [-Wunused-variable]
-   17 |         int tt=0, td=0;
-      |                   ^~

@@ -1,5 +1,6 @@
 @subtask samples
 manual sample1.in
+manual sample2.in
 
 @subtask small
 @include samples
@@ -17,6 +18,7 @@ gen 1 11
 gen 1 12
 
 @subtask alive
+manual sample1.in
 gen 2 1
 gen 2 2
 gen 2 3

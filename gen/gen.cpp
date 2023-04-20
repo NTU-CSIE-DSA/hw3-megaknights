@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include "testlib.h"
-#define kN 100005
-#define maxn 100000
+#define kN 1000006
+#define maxn 200000
 #define smalln 1000
 #define maxhp 1000000000
 //#define int long long

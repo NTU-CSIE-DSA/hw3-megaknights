@@ -7,19 +7,15 @@
     },
     "small": {
       "index": 1,
-      "score": 10
+      "score": 15
     },
 	"alive":{
       "index": 2,
-	  "score": 15
-	},
-	"tou":{
-      "index": 3,
-	  "score": 15
+	  "score": 20
 	},
 	"all": {
       "index": 2,
-      "score": 85
+      "score": 65
     }
   }
 }

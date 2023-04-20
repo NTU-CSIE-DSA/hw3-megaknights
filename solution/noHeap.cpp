@@ -26,11 +26,12 @@ void ins(Heap *a, const heap b){
 		memcpy(c, a->a, sizeof(heap)*a->mxsz),
 		free(a->a), a->a=c, a->mxsz<<=1;
 	c=a->a, c[a->sz]=b;
-	for(int i=a->sz++; i; i=parent(i))
+	++a->sz;
+	/*for(int i=a->sz++; i; i=parent(i))
 		if(cmp(c[i], c[parent(i)]))swaph(c+i, c+parent(i));
-		else return;
+		else return;*/
 }
-void del(Heap *a){
+/*void del(Heap *a){
 	heap *c=a->a;
 	c[0]=c[--a->sz];
 	for(int i=0; left(i)<a->sz; )
@@ -44,7 +45,7 @@ void del(Heap *a){
 			return;
 		}
 		else return;
-}
+}*/
 void out(Heap *a){for(int i=0; i<a->sz; ++i)printf("%lld%c", a->a[i].v, " \n"[i==a->sz-1]);}
 
 typedef struct node{
@@ -55,19 +56,27 @@ typedef struct node{
 node a[kN];
 int n, m, *G[kN], deg[kN], *H[kN], nh[kN]; // H: what is dead there
 
-int Find(int x){
-	while(x!=a[x].p)x=a[x].p;
-	return x;
-}
+int Find(int x){return x==a[x].p?x:Find(a[x].p);}
 void Union(int x, int y){ // x jump to y
 	if(~a[x].gg||~a[y].gg)return;
 	x=Find(x), y=Find(y);
 	if(x==y)return;
 	a[y].dg+=a[x].atk;
-	while(a[y].hp.sz&&a[y].hp.a[0].v<=a[y].dg){
+	static heap tmp[kN];
+	int ntmp=0;
+	rep(i, a[y].hp.sz){
+		if(a[y].hp.a[i].v<=a[y].dg){
+			int z=a[y].hp.a[i].id;
+			a[y].atk-=a[z].atk0, a[z].gg=y, a[z].adj=a[y].ans;
+		}
+		else tmp[ntmp++]=a[y].hp.a[i];
+	}
+	a[y].hp.sz=ntmp;
+	rep(i, ntmp)a[y].hp.a[i]=tmp[i];
+	/*while(a[y].hp.sz&&a[y].hp.a[0].v<=a[y].dg){
 		int z=a[y].hp.a[0].id;
 		a[y].atk-=a[z].atk0, a[z].gg=y, a[z].adj=a[y].ans, del(&a[y].hp);
-	}
+	}*/
 	++a[x].ans;
 	if(a[x].sz<a[y].sz)swapi(&x, &y);
 	a[y].p=x, a[x].sz+=a[y].sz, a[x].atk+=a[y].atk, a[y].ans-=a[x].ans;

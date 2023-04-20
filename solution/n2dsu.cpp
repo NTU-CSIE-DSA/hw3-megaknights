@@ -55,10 +55,7 @@ typedef struct node{
 node a[kN];
 int n, m, *G[kN], deg[kN], *H[kN], nh[kN]; // H: what is dead there
 
-int Find(int x){
-	while(x!=a[x].p)x=a[x].p;
-	return x;
-}
+int Find(int x){return x==a[x].p?x:Find(a[x].p);}
 void Union(int x, int y){ // x jump to y
 	if(~a[x].gg||~a[y].gg)return;
 	x=Find(x), y=Find(y);
@@ -69,7 +66,7 @@ void Union(int x, int y){ // x jump to y
 		a[y].atk-=a[z].atk0, a[z].gg=y, a[z].adj=a[y].ans, del(&a[y].hp);
 	}
 	++a[x].ans;
-	if(a[x].sz<a[y].sz)swapi(&x, &y);
+	//if(a[x].sz<a[y].sz)swapi(&x, &y);
 	a[y].p=x, a[x].sz+=a[y].sz, a[x].atk+=a[y].atk, a[y].ans-=a[x].ans;
 	rep(i, a[y].hp.sz)ins(&a[x].hp, toHeap(a[y].hp.a[i].v-a[y].dg+a[x].dg, a[y].hp.a[i].id));
 }

@@ -10,11 +10,11 @@ string toS(int n){
 
 signed main(){
     cout<<"{\n\
-    \"name\": \"Cycling Teams and Bakeries\",\n\
-    \"timeLimit\": 3.5,\n\
+    \"name\": \"Jumping Mega Knights\",\n\
+    \"timeLimit\": 1.0,\n\
     \"memLimit\": 1048576,\n\
     \"testdata\": [\n";
-    string score[5]={"0","10","15","15","60"};
+    string score[4]={"0","15","20","65"};
     string s, t, s0="", out="";
     int i=0;
     while(cin>>s>>t){

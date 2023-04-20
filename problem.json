@@ -1,9 +1,9 @@
 {
-	"name": "electricShocksInDsaClass",
-	"code": "electricShocksInDsaClass",
-	"title": "Electric Shocks in DSA Class",
+	"name": "jumpingMegaKnights",
+	"code": "jumpingMegaKnights",
+	"title": "Jumping Mega Knights",
 	"memory_limit": 1048576,
-	"time_limit": 4,
+	"time_limit": 1,
 	"type": "Batch",
 	"description": "",
 	"has_grader": false,

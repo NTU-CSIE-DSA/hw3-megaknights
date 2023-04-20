@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <assert.h>
 #define int long long
 #define rep(i,n) for(int i=0; i<(n); ++i)
 #define fup(i,a,b) for(int i=(a); i<(b); ++i)
@@ -55,16 +56,14 @@ typedef struct node{
 node a[kN];
 int n, m, *G[kN], deg[kN], *H[kN], nh[kN]; // H: what is dead there
 
-int Find(int x){
-	while(x!=a[x].p)x=a[x].p;
-	return x;
-}
+int Find(int x){return x==a[x].p?x:Find(a[x].p);}
 void Union(int x, int y){ // x jump to y
 	if(~a[x].gg||~a[y].gg)return;
 	x=Find(x), y=Find(y);
 	if(x==y)return;
 	a[y].dg+=a[x].atk;
 	while(a[y].hp.sz&&a[y].hp.a[0].v<=a[y].dg){
+		assert(0);
 		int z=a[y].hp.a[0].id;
 		a[y].atk-=a[z].atk0, a[z].gg=y, a[z].adj=a[y].ans, del(&a[y].hp);
 	}

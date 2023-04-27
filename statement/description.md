@@ -4,8 +4,6 @@ There are $n$ mega knights located at $n$ distinct positions. The $i$-th mega kn
 
 In the following $m$ rounds, during the $i$-th round, the $x_i$-th mega knight suddenly wants to attack the $y_i$-th mega knight. All the mega knights located at the same position as the $x_i$-th one will jump to the position of the $y_i$-th mega knight. Because the damage caused by a mega knight's attack is AOE (area of effect), all the mega knights at the same position as the $y_i$-th one will be attacked, and their hitpoints will be reduced by the total jump damage of the mega knights that jumped to their position. If a mega knight's hitpoints $\leq 0$, it will instantly die and will no longer jump or attack other mega knights.
 
-Note that if the $x_i$-th mega knight wants to attack the $y_i$-th mega knight, but one of them is already dead, nothing will happen, as a dead mega knight cannot attack or be attacked. Also, if both mega knights are at the same position, nothing will happen, as mega knights need to jump to generate attack effects.
-
 Determine how many times each mega knight jumps.
 
 ## Input
@@ -14,6 +12,8 @@ The first line contains two positive integers $n$ and $m$ separated by a space -
 The second line contains $n$ positive integers $h_1, h_2, \dots, h_n$ separated by spaces -- the hitpoints of each super knight.
 The third line contains $n$ positive integers $a_1, a_2, \dots, a_n$, separated by spaces -- the jump damage of each super knight.
 The next $m$ lines each contain two positive integers $x_i$ and $y_i$ separated by a space -- the attacking and the attacked super knight.
+
+Note that if the $x_i$-th mega knight wants to attack the $y_i$-th mega knight, but one of them is already dead, nothing will happen, as a dead mega knight cannot attack or be attacked. Also, if both mega knights are at the same position, nothing will happen, as mega knights need to jump to generate attack effects.
 
 ## Output
 

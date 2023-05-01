@@ -8,10 +8,10 @@ Determine how many times each mega knight jumps.
 
 ## Input
 
-The first line contains two positive integers $n$ and $m$ separated by a space -- the number of super knights and the number of attack rounds.
-The second line contains $n$ positive integers $h_1, h_2, \dots, h_n$ separated by spaces -- the hitpoints of each super knight.
-The third line contains $n$ positive integers $a_1, a_2, \dots, a_n$, separated by spaces -- the jump damage of each super knight.
-The next $m$ lines each contain two positive integers $x_i$ and $y_i$ separated by a space -- the attacking and the attacked super knight.
+The first line contains two positive integers $n$ and $m$ separated by a space -- the number of mega knights and the number of attack rounds.
+The second line contains $n$ positive integers $h_1, h_2, \dots, h_n$ separated by spaces -- the hitpoints of each mega knight.
+The third line contains $n$ positive integers $a_1, a_2, \dots, a_n$, separated by spaces -- the jump damage of each mega knight.
+The next $m$ lines each contain two positive integers $x_i$ and $y_i$ separated by a space -- the attacking and the attacked mega knight.
 
 Note that if the $x_i$-th mega knight wants to attack the $y_i$-th mega knight, but one of them is already dead, nothing will happen, as a dead mega knight cannot attack or be attacked. Also, if both mega knights are at the same position, nothing will happen, as mega knights need to jump to generate attack effects.
 
